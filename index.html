@@ -1,28 +1,66 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Modelo AR - AQ425</title>
-  <script type="module"
-    src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
-  </script>
-  <style>
-    body { margin:0; font-family:sans-serif; }
-    model-viewer { width:100vw; height:100vh; background:#eee; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizador 3D: Estatua01</title>
+    
+    <!-- Importar el script de model-viewer -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        /* Estilo del contenedor del modelo */
+        model-viewer {
+            width: 100%;
+            max-width: 600px;
+            height: 450px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-radius: 12px;
+        }
+
+        /* Botón de Realidad Aumentada */
+        #ar-button {
+            background-color: #1a73e8;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-  <model-viewer
-    src="Estatua01.glb"
-    alt="Modelo 3D del proyecto"
-    ar
-    ar-modes="webxr scene-viewer quick-look"
-    ar-scale="fixed"
-    camera-controls
-    auto-rotate
-    shadow-intensity="1">
-  </model-viewer>
+
+    <h2>Modelo 3D: Estatua01</h2>
+
+    <!-- Modelo configurado con EstatuaAR.glb -->
+    <model-viewer 
+        src="Estatua01.glb" 
+        alt="Estatua AR en 3D" 
+        ar 
+        ar-modes="scene-viewer quick-look webxr" 
+        camera-controls 
+        auto-rotate>
+        
+        <button id="ar-button" slot="ar-button">
+            📦 Ver en tu espacio (AR)
+        </button>
+    </model-viewer>
+
 </body>
 </html>
-
